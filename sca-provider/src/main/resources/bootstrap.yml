@@ -1,0 +1,30 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: sca-provider
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+seata:
+  enabled: true
+  application-id: sca-provider
+  enable-auto-data-source-proxy: true
+  tx-service-group: zpTx
+  config:
+    type: nacos
+    nacos:
+      namespace: eadf19ca-28be-4080-a045-6efddac20055
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      namespace:
+      server-addr: 127.0.0.1:8848
+      username: "nacos"
+      password: "nacos"

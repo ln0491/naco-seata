@@ -1,4 +1,4 @@
-package com.ghgcn.sca.provider.config;
+package com.ghgcn.sca.customer.config;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@MapperScan("com.ghgcn.sca.provider.mapper")
+@MapperScan("com.ghgcn.sca.customer.mapper")
 public class MybatisPlusConfig {
     /**
      * mybatis-plus分页插件<br>

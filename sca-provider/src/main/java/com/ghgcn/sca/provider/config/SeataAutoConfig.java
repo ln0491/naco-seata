@@ -1,8 +1,9 @@
-package com.ghgcn.sca.customer.config;
+package com.ghgcn.sca.provider.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import io.seata.rm.datasource.DataSourceProxy;
 import io.seata.spring.annotation.GlobalTransactionScanner;
+import io.seata.spring.annotation.datasource.EnableAutoDataSourceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
@@ -46,17 +47,4 @@ public class SeataAutoConfig {
         return druidDataSource;
     }
 
-    @Bean
-    public DataSourceProxy dataSourceProxy(DruidDataSource druidDataSource){
-        return new DataSourceProxy(druidDataSource);
-    }
-    /**
-     * init global transaction scanner
-     *
-     * @Return: GlobalTransactionScanner
-     */
-    @Bean
-    public GlobalTransactionScanner globalTransactionScanner(){
-        return new GlobalTransactionScanner("sca-costomer", "sca-costomer");
-    }
 }
